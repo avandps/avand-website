@@ -1,0 +1,72 @@
+import Head from 'next/head';
+import Hero from '../components/Hero';
+
+export default function Home() {
+  return (
+    <div className="font-sans antialiased text-brand-teal">
+      <Head>
+        <title>AVAND Home Loans | Mortgage Broker Alfredton Victoria</title>
+        <meta name="description" content="AVAND Home Loans is a trusted mortgage broker in Alfredton and Ballarat." />
+      </Head>
+
+      {/* Header */}
+      <nav className="sticky top-0 z-50 bg-brand-tealDark py-4 px-8 flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <img src="/logo-full.png" alt="AVAND Logo" className="h-10" />
+          <span className="text-brand-cream font-bold text-xl">AVAND</span>
+        </div>
+        <div className="hidden md:flex gap-8 text-brand-cream">
+          <a href="#about" className="hover:text-brand-gold">About</a>
+          <a href="#services" className="hover:text-brand-gold">Services</a>
+          <a href="#contact" className="bg-brand-gold text-brand-tealDark px-5 py-2 rounded-full font-bold">Free Consultation</a>
+        </div>
+      </nav>
+
+      <Hero />
+
+      {/* Lenders Section (Mixed Background) */}
+      <section className="py-20 bg-white text-center">
+        <h2 className="text-3xl font-bold mb-10">We Work With Leading Lenders</h2>
+        <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0">
+          {/* Add lender logo images here */}
+          <span className="text-xl font-bold">CBA</span>
+          <span className="text-xl font-bold">Westpac</span>
+          <span className="text-xl font-bold">ANZ</span>
+          <span className="text-xl font-bold">NAB</span>
+        </div>
+      </section>
+
+      {/* Contact Section (Brand Teal) */}
+      <section id="contact" className="py-20 bg-brand-teal text-brand-cream">
+        <div className="container mx-auto px-8 grid lg:grid-cols-2 gap-16">
+          <div>
+            <h2 className="text-4xl font-bold mb-6 text-brand-gold">Let's Talk Finance</h2>
+            <p className="mb-8">Based in Alfredton, serving all of Victoria.</p>
+            <div className="space-y-4">
+              <p>📍 17 Carlow Drive, Alfredton VIC 3350</p>
+              <p>📞 0430 214 200</p>
+              <p>📧 waruna@avandhomeloans.com.au</p>
+            </div>
+          </div>
+          {/* Multi-Step Form Component would go here */}
+          <div className="bg-brand-tealDark p-8 rounded-2xl border border-brand-gold/30">
+            <h3 className="text-2xl font-bold mb-6 text-brand-gold">Request Call Back</h3>
+            <form action="mailto:waruna@avandhomeloans.com.au" method="post" className="space-y-4">
+               <input type="text" placeholder="Your Name" className="w-full p-3 rounded-lg bg-brand-teal border-none text-white" required />
+               <input type="email" placeholder="Email Address" className="w-full p-3 rounded-lg bg-brand-teal border-none text-white" required />
+               <button type="submit" className="w-full bg-brand-gold text-brand-tealDark py-4 rounded-lg font-bold">Submit Enquiry</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 bg-black text-brand-gold text-center text-sm px-8">
+        <p>© 2026 AVAND Home Loans | Alfredton & Ballarat</p>
+        <p className="mt-4 text-[10px] text-brand-gold/60 max-w-4xl mx-auto">
+          Information is general in nature and subject to lender approval.
+        </p>
+      </footer>
+    </div>
+  );
+}
